@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam Okafor — Product Engineer</title>
+<meta name="description" content="Portfolio of Sam Okafor, product engineer. Selected work, about, and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Corner registration marks — decorative, blueprint-style -->
+<div class="crosshair crosshair--tl" aria-hidden="true"></div>
+<div class="crosshair crosshair--tr" aria-hidden="true"></div>
+<div class="crosshair crosshair--bl" aria-hidden="true"></div>
+<div class="crosshair crosshair--br" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">S.OKAFOR<span class="logo-dot">/</span>DEV</a>
+    <nav class="nav" aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Product engineer — building &amp; testing GitHub Pages sample</p>
+        <h1 class="hero-title">I turn rough ideas<br>into shipped software.</h1>
+        <p class="hero-lede">
+          I'm Sam Okafor. I design and build web products end to end —
+          from the first sketch to the deploy pipeline. This page is a
+          starter template: swap in your name, work, and colors to make it yours.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn--primary">View the work</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- Signature element: blueprint title block -->
+      <div class="title-block" role="note" aria-label="Page metadata, styled as a drafting title block">
+        <div class="title-block-row title-block-row--head">
+          <span>SHEET</span>
+          <span>NO. 001</span>
+        </div>
+        <dl class="title-block-fields">
+          <div><dt>Name</dt><dd>Sam Okafor</dd></div>
+          <div><dt>Role</dt><dd>Product Engineer</dd></div>
+          <div><dt>Based in</dt><dd>Remote / EU</dd></div>
+          <div><dt>Status</dt><dd class="status-live"><span class="status-dot"></span>Open to work</dd></div>
+          <div><dt>Rev.</dt><dd>01</dd></div>
+          <div><dt>Updated</dt><dd><time datetime="2026-07-09">Jul 2026</time></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Sheets 01 – 04</p>
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="sheet-grid">
+
+        <article class="sheet-card">
+          <div class="sheet-tab">01</div>
+          <h3>Ledger — expense tracking for small teams</h3>
+          <p>A lightweight web app that replaced three spreadsheets and a
+             Slack channel with one shared source of truth for team spend.</p>
+          <ul class="tag-list">
+            <li>React</li><li>Node</li><li>Postgres</li>
+          </ul>
+          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="sheet-card">
+          <div class="sheet-tab">02</div>
+          <h3>Northwind — inventory dashboard</h3>
+          <p>Rebuilt a legacy inventory tool as a fast, keyboard-first
+             dashboard. Cut average lookup time from 40s to 4s.</p>
+          <ul class="tag-list">
+            <li>TypeScript</li><li>Next.js</li><li>D3</li>
+          </ul>
+          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="sheet-card">
+          <div class="sheet-tab">03</div>
+          <h3>Fieldnote — offline-first survey app</h3>
+          <p>A survey tool for researchers working without reliable signal.
+             Syncs automatically once a connection is available.</p>
+          <ul class="tag-list">
+            <li>React Native</li><li>SQLite</li><li>Sync</li>
+          </ul>
+          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="sheet-card">
+          <div class="sheet-tab">04</div>
+          <h3>Marker — design token pipeline</h3>
+          <p>An internal CLI that generates typed design tokens from Figma,
+             cutting design-to-code drift across four product teams.</p>
+          <ul class="tag-list">
+            <li>CLI</li><li>Figma API</li><li>Style Dictionary</li>
+          </ul>
+          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="section-head">
+        <p class="eyebrow">Sheet 05</p>
+        <h2>About</h2>
+      </div>
+      <div class="about-body">
+        <p>
+          I've spent the last several years building web products for small
+          teams that needed something sturdy fast — mostly internal tools,
+          dashboards, and the occasional public-facing app. I like projects
+          where the constraints are real and the users are close by.
+        </p>
+        <p>
+          Outside of client work I maintain a couple of small open-source
+          tools and write occasionally about the parts of engineering that
+          don't make it into the changelog.
+        </p>
+
+        <dl class="spec-list">
+          <div><dt>Stack</dt><dd>TypeScript, React, Node, Postgres</dd></div>
+          <div><dt>Also use</dt><dd>Figma, Docker, GitHub Actions</dd></div>
+          <div><dt>Currently</dt><dd>Freelance, taking new projects</dd></div>
+          <div><dt>Elsewhere</dt><dd>GitHub, LinkedIn, RSS</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <p class="eyebrow">Sheet 06</p>
+      <h2>Let's build something.</h2>
+      <p class="contact-lede">The fastest way to reach me is email. I usually reply within a day or two.</p>
+      <a class="btn btn--primary btn--lg" href="mailto:hello@samokafor.dev">hello@samokafor.dev</a>
+      <ul class="social-list">
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Resume</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year">2026</span> Sam Okafor. Built and deployed with GitHub Pages.</p>
+    <p class="footer-meta">Rev. 01 — this template is yours to edit.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
