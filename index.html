@@ -3,26 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Product Engineer</title>
+<title>Temujin Orkhon</title>
 <meta name="description" content="Portfolio of Temujin Orkhon. Selected work, about, and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Corner registration marks — decorative, blueprint-style -->
-<div class="crosshair crosshair--tl" aria-hidden="true"></div>
-<div class="crosshair crosshair--tr" aria-hidden="true"></div>
-<div class="crosshair crosshair--bl" aria-hidden="true"></div>
-<div class="crosshair crosshair--br" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#top" class="logo">O.TEMUJIN<span class="logo-dot">/</span>PORTFOLIO</a>
+    <a href="#top" class="logo">T. ORKHON</a>
     <nav class="nav" aria-label="Primary">
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
         <span></span><span></span><span></span>
@@ -42,12 +36,12 @@
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">This is a test — building thoughtful digital experiences</p>
-        <h1 class="hero-title">I turn rough ideas<br>into shipped software.</h1>
+        <p class="eyebrow">Personal record</p>
+        <h1 class="hero-title">I build software the way<br>you run an experiment —<br>measured, tested, repeatable.</h1>
         <p class="hero-lede">
-          I'm Your Name. I design and build web products end to end —
-          from the first sketch to the deployed experience. I focus on clean
-          interfaces, reliable launches, and products that feel like they belong.
+          I'm Temujin Orkhon. This page collects a few things I've built.
+          Everything below is a starting sample — swap in your own projects,
+          bio, and contact details to make it yours.
         </p>
         <div class="hero-actions">
           <a href="#work" class="btn btn--primary">View the work</a>
@@ -55,20 +49,15 @@
         </div>
       </div>
 
-      <!-- Signature element: blueprint title block -->
-      <div class="title-block" role="note" aria-label="Page metadata, styled as a drafting title block">
-        <div class="title-block-row title-block-row--head">
-          <span>SHEET</span>
-          <span>NO. 001</span>
+      <!-- Signature element: periodic-table identity tile -->
+      <div class="element-tile" role="note" aria-label="Profile summary, styled as a periodic table entry">
+        <div class="element-tile-num">01</div>
+        <div class="element-tile-symbol">Tj</div>
+        <div class="element-tile-name">TEMUJIN ORKHON</div>
+        <div class="element-tile-meta">
+          <span class="status-dot" aria-hidden="true"></span>
+          Available for work
         </div>
-        <dl class="title-block-fields">
-          <div><dt>Name</dt><dd>Temujin Orkhon</dd></div>
-          <div><dt>Role</dt><dd>Test job</dd></div>
-          <div><dt>Based in</dt><dd>Remote / EU</dd></div>
-          <div><dt>Status</dt><dd class="status-live"><span class="status-dot"></span>Open to work</dd></div>
-          <div><dt>Rev.</dt><dd>01</dd></div>
-          <div><dt>Updated</dt><dd><time datetime="2026-07-09">Jul 2026</time></dd></div>
-        </dl>
       </div>
     </div>
   </section>
@@ -77,56 +66,51 @@
   <section class="work" id="work">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Sheets 01 – 04</p>
+        <p class="eyebrow">Fig. 1</p>
+        <svg class="bond-rule" viewBox="0 0 120 8" aria-hidden="true"><circle cx="4" cy="4" r="3"/><line x1="7" y1="4" x2="113" y2="4"/><circle cx="116" cy="4" r="3"/></svg>
         <h2>Selected work</h2>
       </div>
 
-      <div class="sheet-grid">
+      <div class="data-table" role="table" aria-label="Selected projects">
+        <div class="data-row data-row--head" role="row">
+          <span role="columnheader">ID</span>
+          <span role="columnheader">Sample</span>
+          <span role="columnheader">Composition</span>
+          <span role="columnheader">Result</span>
+          <span role="columnheader" class="col-link-head">Link</span>
+        </div>
 
-        <article class="sheet-card">
-          <div class="sheet-tab">01</div>
-          <h3>Ledger — expense tracking for small teams</h3>
-          <p>A lightweight web app that replaced three spreadsheets and a
-             Slack channel with one shared source of truth for team spend.</p>
-          <ul class="tag-list">
-            <li>React</li><li>Node</li><li>Postgres</li>
-          </ul>
-          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
-        </article>
+        <div class="data-row" role="row">
+          <span class="col-id" role="cell" data-label="ID">S-01</span>
+          <span class="col-title" role="cell" data-label="Sample">Ledger — team expense tracker</span>
+          <span class="col-formula" role="cell" data-label="Composition">React&#8322; &middot; Node &middot; PgSQL</span>
+          <span class="col-result" role="cell" data-label="Result">Replaced 3 spreadsheets</span>
+          <span class="col-link" role="cell" data-label="Link"><a href="#">View &rarr;</a></span>
+        </div>
 
-        <article class="sheet-card">
-          <div class="sheet-tab">02</div>
-          <h3>Northwind — inventory dashboard</h3>
-          <p>Rebuilt a legacy inventory tool as a fast, keyboard-first
-             dashboard. Cut average lookup time from 40s to 4s.</p>
-          <ul class="tag-list">
-            <li>TypeScript</li><li>Next.js</li><li>D3</li>
-          </ul>
-          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
-        </article>
+        <div class="data-row" role="row">
+          <span class="col-id" role="cell" data-label="ID">S-02</span>
+          <span class="col-title" role="cell" data-label="Sample">Northwind — inventory dashboard</span>
+          <span class="col-formula" role="cell" data-label="Composition">TS &middot; Next.js &middot; D&#8323;</span>
+          <span class="col-result" role="cell" data-label="Result">40s lookup &rarr; 4s</span>
+          <span class="col-link" role="cell" data-label="Link"><a href="#">View &rarr;</a></span>
+        </div>
 
-        <article class="sheet-card">
-          <div class="sheet-tab">03</div>
-          <h3>Fieldnote — offline-first survey app</h3>
-          <p>A survey tool for researchers working without reliable signal.
-             Syncs automatically once a connection is available.</p>
-          <ul class="tag-list">
-            <li>React Native</li><li>SQLite</li><li>Sync</li>
-          </ul>
-          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
-        </article>
+        <div class="data-row" role="row">
+          <span class="col-id" role="cell" data-label="ID">S-03</span>
+          <span class="col-title" role="cell" data-label="Sample">Fieldnote — offline survey app</span>
+          <span class="col-formula" role="cell" data-label="Composition">RN &middot; SQLite &middot; Sync</span>
+          <span class="col-result" role="cell" data-label="Result">Works fully offline</span>
+          <span class="col-link" role="cell" data-label="Link"><a href="#">View &rarr;</a></span>
+        </div>
 
-        <article class="sheet-card">
-          <div class="sheet-tab">04</div>
-          <h3>Marker — design token pipeline</h3>
-          <p>An internal CLI that generates typed design tokens from Figma,
-             cutting design-to-code drift across four product teams.</p>
-          <ul class="tag-list">
-            <li>CLI</li><li>Figma API</li><li>Style Dictionary</li>
-          </ul>
-          <a href="#" class="sheet-link">View project <span aria-hidden="true">&rarr;</span></a>
-        </article>
-
+        <div class="data-row" role="row">
+          <span class="col-id" role="cell" data-label="ID">S-04</span>
+          <span class="col-title" role="cell" data-label="Sample">Marker — design token pipeline</span>
+          <span class="col-formula" role="cell" data-label="Composition">CLI &middot; Figma API</span>
+          <span class="col-result" role="cell" data-label="Result">Cut drift across 4 teams</span>
+          <span class="col-link" role="cell" data-label="Link"><a href="#">View &rarr;</a></span>
+        </div>
       </div>
     </div>
   </section>
@@ -135,26 +119,30 @@
   <section class="about" id="about">
     <div class="wrap about-grid">
       <div class="section-head">
-        <p class="eyebrow">Sheet 05</p>
+        <p class="eyebrow">Fig. 2</p>
+        <svg class="bond-rule" viewBox="0 0 120 8" aria-hidden="true"><circle cx="4" cy="4" r="3"/><line x1="7" y1="4" x2="113" y2="4"/><circle cx="116" cy="4" r="3"/></svg>
         <h2>About</h2>
       </div>
       <div class="about-body">
-        <p>
-          I've spent the last several years building web products for small
-          teams that needed something sturdy fast — mostly internal tools,
-          dashboards, and the occasional public-facing app. I like projects
-          where the constraints are real and the users are close by.
-        </p>
-        <p>
-          Outside of client work I maintain a couple of small open-source
-          tools and write occasionally about the parts of engineering that
-          don't make it into the changelog.
-        </p>
+        <div class="notebook-entry">
+          <p class="notebook-date">Entry — updated Jul 2026</p>
+          <p>
+            I've spent the last several years building web products for small
+            teams that needed something sturdy fast — mostly internal tools,
+            dashboards, and the occasional public-facing app. I like projects
+            where the constraints are real and the users are close by.
+          </p>
+          <p>
+            Outside of client work I maintain a couple of small open-source
+            tools and write occasionally about the parts of engineering that
+            don't make it into the changelog.
+          </p>
+        </div>
 
         <dl class="spec-list">
           <div><dt>Stack</dt><dd>TypeScript, React, Node, Postgres</dd></div>
           <div><dt>Also use</dt><dd>Figma, Docker, GitHub Actions</dd></div>
-          <div><dt>Currently</dt><dd>Freelance, taking new projects</dd></div>
+          <div><dt>Currently</dt><dd>Taking on new projects</dd></div>
           <div><dt>Elsewhere</dt><dd>GitHub, LinkedIn, RSS</dd></div>
         </dl>
       </div>
@@ -164,10 +152,16 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap contact-inner">
-      <p class="eyebrow">Sheet 06</p>
+      <p class="eyebrow">Fig. 3</p>
+      <svg class="bond-rule" viewBox="0 0 120 8" aria-hidden="true"><circle cx="4" cy="4" r="3"/><line x1="7" y1="4" x2="113" y2="4"/><circle cx="116" cy="4" r="3"/></svg>
       <h2>Let's build something.</h2>
       <p class="contact-lede">The fastest way to reach me is email. I usually reply within a day or two.</p>
-      <a class="btn btn--primary btn--lg" href="mailto:tjboii04@email.com">your@email.com</a>
+
+      <div class="specimen-label">
+        <p class="specimen-label-row"><span>Name</span><strong>Temujin Orkhon</strong></p>
+        <p class="specimen-label-row"><span>Email</span><a href="mailto:tjboii04@gmail.com">tjboii04@gmail.com</a></p>
+      </div>
+
       <ul class="social-list">
         <li><a href="#">GitHub</a></li>
         <li><a href="#">LinkedIn</a></li>
@@ -181,7 +175,7 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p>&copy; <span id="year">2026</span> Temujin Orkhon. Built and deployed with GitHub Pages.</p>
-    <p class="footer-meta">Rev. 01 — your site is ready to personalize further.</p>
+    <p class="footer-meta">This template is yours to edit.</p>
   </div>
 </footer>
 

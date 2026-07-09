@@ -20,11 +20,11 @@ if (navToggle && navList) {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Gentle reveal-on-scroll for sheet cards, respects reduced-motion
+// Gentle reveal-on-scroll for data rows, respects reduced-motion
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
-  const revealTargets = document.querySelectorAll(".sheet-card");
+  const revealTargets = document.querySelectorAll(".data-row:not(.data-row--head)");
 
   revealTargets.forEach((el) => {
     el.style.opacity = "0";
