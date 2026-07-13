@@ -21,14 +21,30 @@
 
     function resize() {
       dpr = window.devicePixelRatio || 1;
-      width = hero.clientWidth;
-      height = hero.clientHeight;
+      const newWidth = hero.clientWidth;
+      const newHeight = hero.clientHeight;
+      const widthChanged = Math.abs(newWidth - width) > 1;
+
+      width = newWidth;
+      height = newHeight;
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       canvas.style.width = width + "px";
       canvas.style.height = height + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      initParticles();
+
+      if (widthChanged || particles.length === 0) {
+        // Real resize (rotation, window resize) — regenerate the layout.
+        initParticles();
+      } else {
+        // Height-only change (e.g. mobile browser address bar hiding while
+        // scrolling) — keep existing particles, just clamp them into bounds
+        // instead of respawning, so nothing visibly jumps.
+        particles.forEach((p) => {
+          p.x = Math.min(p.x, width);
+          p.y = Math.min(p.y, height);
+        });
+      }
     }
 
     function initParticles() {
@@ -38,7 +54,7 @@
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.25,
         vy: (Math.random() - 0.5) * 0.25,
-        r: 3 + Math.random() * 1.6,
+        r: 1.6 + Math.random() * 1.6,
       }));
     }
 
@@ -101,7 +117,11 @@
       }
     }
 
-    window.addEventListener("resize", resize);
+    let resizeTimer = null;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    });
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) stop();
       else start();
