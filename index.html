@@ -19,8 +19,8 @@
     <a href="#top" class="logo">T. ORKHON</a>
     <nav aria-label="Primary">
       <ul class="nav-list">
-        <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -30,25 +30,49 @@
 <main id="main">
 
   <section class="hero" id="top">
+    <canvas id="molecule-bg" class="hero-canvas" aria-hidden="true"></canvas>
     <div class="wrap">
-      <p class="eyebrow hero-eyebrow">Personal record</p>
-      <svg class="molecule" width="72" height="40" viewBox="0 0 72 40" aria-hidden="true">
-        <line x1="12" y1="20" x2="30" y2="8"></line>
-        <line x1="30" y1="8" x2="48" y2="20"></line>
-        <line x1="48" y1="20" x2="60" y2="14"></line>
-        <line x1="30" y1="8" x2="30" y2="26"></line>
-        <circle cx="12" cy="20" r="4"></circle>
-        <circle cx="30" cy="8" r="4"></circle>
-        <circle cx="48" cy="20" r="4"></circle>
-        <circle cx="60" cy="14" r="4"></circle>
-        <circle cx="30" cy="26" r="4"></circle>
-      </svg>
-      <h1 class="hero-title">Building software the way an experiment gets run.</h1>
-      <p class="hero-lede">
-        I'm Temujin Orkhon. This page collects a few things I've built.
-        Everything below is a starting sample — swap in your own projects,
-        bio, and contact details to make it yours.
-      </p>
+      <div class="hero-mark">
+        <span>Personal</span>
+        <svg class="molecule" width="72" height="40" viewBox="0 0 72 40" aria-hidden="true">
+          <line x1="15" y1="5" x2="33" y2="5"></line>
+          <line x1="15" y1="35" x2="33" y2="35"></line>
+          <line x1="40" y1="20" x2="33" y2="5"></line>
+          <line x1="40" y1="20" x2="33" y2="35"></line>
+          <line x1="8" y1="20" x2="15" y2="5"></line>
+          <line x1="8" y1="20" x2="15" y2="35"></line>
+          <line x1="58" y1="20" x2="40" y2="20"></line>
+          <line x1="67" y1="5" x2="58" y2="20"></line>
+          <line x1="67" y1="35" x2="58" y2="20"></line>
+
+          <circle cx="15" cy="5", r="4"></circle>
+          <circle cx="15" cy="35", r="4"></circle>
+          <circle cx="33" cy="5", r="4"></circle>
+          <circle cx="33" cy="35", r="4"></circle>
+          <circle cx="40" cy="20", r="4"></circle>
+          <circle cx="8" cy="20", r="4"></circle>
+          <circle cx="58" cy="20", r="4"></circle>
+          <circle cx="67" cy="5", r="4"></circle>
+          <circle cx="67" cy="35", r="4"></circle>
+          
+        </svg>
+        <span>Website</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="element-tile" role="note" aria-label="Initials, styled as a periodic table entry">
+          <span class="element-tile-num">14</span>
+          <span class="element-tile-symbol">To</span>
+          <span class="element-tile-name">Temujin Orkhon</span>
+        </div>
+
+        <div class="hero-copy">
+          <h1 class="hero-lede"><strong>I'm Temujin Orkhon.</strong> 
+            This page collects a some of my research work and a way to contact me.
+          </h1>
+        </div>
+      </div>
+
       <div class="hero-actions">
         <a href="#work" class="btn btn--primary">View the work</a>
         <a href="#contact" class="btn btn--ghost">Get in touch</a>
@@ -56,79 +80,67 @@
     </div>
   </section>
 
-  <section class="section" id="work">
+  <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Fig. 1</p>
-        <h2>Selected work</h2>
+        <h2>About</h2>
+      </div>
+      <div class="about-body">
+        <p>
+          I am a PhD student in Chemistry at the University of California, Berkeley. I aspirations of pursuing research in computational chemistry and quantum chemistry.
+        </p>
+        <p>
+          Recently, I have graduated with a B.S. in Chemistry & Biology and Physics at Massachusetts Institute of Technology. During my undergraduate studies, I have been involved in various research projects,
+          including electronic structure method development, algorithm design for organic transformations, and data-efficient machine learning of chemical properties. 
+        </p>
+        <p>
+          I have also been actively involved in mentoring and teaching, serving as a tutor for several MIT chemistry courses and leading review sessions for exams and assignments.
+        </p>
+        <p>
+          Outside of chemistry, I have a strong interest in software development and design. I have some experience in building websites and light chemical software. I plan to continue developing my skills in this area.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Fig. 2</p>
+        <h2>Selected Works</h2>
       </div>
 
       <div class="work-list">
         <article class="work-item">
           <div class="work-item-head">
-            <h3>Ledger — team expense tracker</h3>
-            <span class="work-id">S-01</span>
+            <h3>Uncertainty improves multi-fidelity machine learning</h3>
+            <span class="work-id">Learning Matter Lab</span>
           </div>
-          <p>A lightweight web app that replaced three spreadsheets and a Slack channel with one shared source of truth for team spend.</p>
-          <ul class="tag-list"><li>React</li><li>Node</li><li>Postgres</li></ul>
-          <a href="#" class="work-link">View project &rarr;</a>
+          <p>Implemented uncertainty quantification to improve data-efficiency in deep learning models for chemical property prediction.</p>
+          <ul class="tag-list"><li>RDKit</li><li>PyTorch</li><li>ChemProp</li></ul>
+          <a href="uncertainty_poster.pdf" target="_blank" class="work-link">View project &rarr;</a>
         </article>
 
         <article class="work-item">
           <div class="work-item-head">
-            <h3>Northwind — inventory dashboard</h3>
-            <span class="work-id">S-02</span>
+            <h3>Holistic reaction template generation using context-driven approach</h3>
+            <span class="work-id">Elkin Lab</span>
           </div>
-          <p>Rebuilt a legacy inventory tool as a fast, keyboard-first dashboard. Cut average lookup time from 40s to 4s.</p>
-          <ul class="tag-list"><li>TypeScript</li><li>Next.js</li><li>D3</li></ul>
-          <a href="#" class="work-link">View project &rarr;</a>
+          <p>Designed a context-aware template generation algorithm for organic synthesis.</p>
+          <ul class="tag-list"><li>RDKit</li><li>Pandas</li><li>Numpy</li></ul>
+          <a href="org_poster.pdf" target="_blank" class="work-link">View project &rarr;</a>
         </article>
 
         <article class="work-item">
           <div class="work-item-head">
-            <h3>Fieldnote — offline-first survey app</h3>
-            <span class="work-id">S-03</span>
+            <h3>Extracting band structures using Bootstrap Embedding</h3>
+            <span class="work-id">Van Voorhis Group</span>
           </div>
-          <p>A survey tool for researchers working without reliable signal. Syncs automatically once a connection is available.</p>
-          <ul class="tag-list"><li>React Native</li><li>SQLite</li><li>Sync</li></ul>
-          <a href="#" class="work-link">View project &rarr;</a>
+          <p>Developed electronic structure methods using quantum embedding to compute band structures of strongly correlated systems.</p>
+          <ul class="tag-list"><li>FHI-aims</li><li>QuEmb</li><li>Bashscript</li></ul>
+          <a class="work-link">Article in Preparation</a>
         </article>
-
-        <article class="work-item">
-          <div class="work-item-head">
-            <h3>Marker — design token pipeline</h3>
-            <span class="work-id">S-04</span>
-          </div>
-          <p>An internal CLI that generates typed design tokens from Figma, cutting design-to-code drift across four product teams.</p>
-          <ul class="tag-list"><li>CLI</li><li>Figma API</li><li>Style Dictionary</li></ul>
-          <a href="#" class="work-link">View project &rarr;</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Fig. 2</p>
-        <h2>About</h2>
-      </div>
-      <div class="about-body">
-        <p>
-          I've spent the last several years building web products for small
-          teams that needed something sturdy fast — mostly internal tools,
-          dashboards, and the occasional public-facing app. I like projects
-          where the constraints are real and the users are close by.
-        </p>
-        <p>
-          Outside of client work I maintain a couple of small open-source
-          tools and write occasionally about the parts of engineering that
-          don't make it into the changelog.
-        </p>
-        <ul class="materials">
-          <li>TypeScript</li><li>React</li><li>Node</li><li>Postgres</li>
-          <li>Figma</li><li>Docker</li><li>GitHub Actions</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -136,18 +148,22 @@
   <section class="section" id="contact">
     <div class="wrap contact-inner">
       <p class="eyebrow">Fig. 3</p>
-      <h2>Let's build something.</h2>
-      <p class="contact-lede">The fastest way to reach me is email. I usually reply within a day or two.</p>
+      <h2>Contact me</h2>
+      <p class="contact-lede">The fastest way to reach me is via email</p>
+
+      <div class="hero-actions contact-actions">
+        <a href="mailto:otemujin@berkeley.edu" class="btn btn--ghost">Email me</a>
+      </div>
 
       <div class="specimen-label">
         <p class="specimen-row"><span>Name</span><strong>Temujin Orkhon</strong></p>
-        <p class="specimen-row"><span>Email</span><a href="mailto:tjboii04@gmail.com">tjboii04@gmail.com</a></p>
+        <p class="specimen-row"><span>Email</span><a href="mailto:otemujin@berkeley.edu">otemujin@berkeley.edu</a></p>
       </div>
 
       <ul class="social-list">
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Resume</a></li>
+        <li><a href="https://github.com/okntemujin" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/temujin-orkhon" target="_blank">LinkedIn</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
       </ul>
     </div>
   </section>
@@ -157,7 +173,6 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p>&copy; <span id="year">2026</span> Temujin Orkhon. Built and deployed with GitHub Pages.</p>
-    <p>This template is yours to edit.</p>
   </div>
 </footer>
 

@@ -1,1 +1,112 @@
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Hero background: floating molecule network
+  (function () {
+    const canvas = document.getElementById("molecule-bg");
+    const hero = canvas ? canvas.closest(".hero") : null;
+    if (!canvas || !hero) return;
+
+    const ctx = canvas.getContext("2d");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const styles = getComputedStyle(document.documentElement);
+    const lineColor = styles.getPropertyValue("--ink-dim").trim() || "#93A0AB";
+    const dotColor = styles.getPropertyValue("--accent").trim() || "#1F6F50";
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let particles = [];
+    let rafId = null;
+
+    function resize() {
+      dpr = window.devicePixelRatio || 1;
+      width = hero.clientWidth;
+      height = hero.clientHeight;
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      initParticles();
+    }
+
+    function initParticles() {
+      const count = Math.max(24, Math.min(70, Math.round((width * height) / 18000)));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r: 3 + Math.random() * 1.6,
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      const linkDist = Math.min(140, width / 6);
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < linkDist) {
+            ctx.globalAlpha = (1 - dist / linkDist) * 0.35;
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      ctx.globalAlpha = 0.55;
+      ctx.fillStyle = dotColor;
+      particles.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+    }
+
+    function step() {
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+      });
+      draw();
+      rafId = requestAnimationFrame(step);
+    }
+
+    function start() {
+      if (prefersReducedMotion) {
+        draw(); // single static frame, no motion
+        return;
+      }
+      if (!rafId) rafId = requestAnimationFrame(step);
+    }
+
+    function stop() {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    window.addEventListener("resize", resize);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    resize();
+    start();
+  })();
