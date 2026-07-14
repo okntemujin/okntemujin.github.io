@@ -16,12 +16,20 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#top" class="logo">T. ORKHON</a>
+    <a href="#top" data-i18n="logo" class="logo">T. ORKHON</a>
     <nav aria-label="Primary">
       <ul class="nav-list">
         <li><a href="#about">About</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="nav-language-switcher">
+          <button id="language-switcher" class="lang-toggle" type="button" aria-label="Switch language" aria-pressed="false">
+            <span class="lang-toggle__track" aria-hidden="true">
+              <span class="lang-toggle__label lang-toggle__label--active">EN</span>
+              <span class="lang-toggle__label">MN</span>
+            </span>
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -34,7 +42,7 @@
     <div class="wrap">
       <div class="hero-mark">
         <span>Personal</span>
-        <svg class="molecule" width="72" height="40" viewBox="0 0 72 40" aria-hidden="true">
+        <svg class="molecule" width="75" height="40" viewBox="0 0 75 40" aria-hidden="true">
           <line x1="15" y1="5" x2="33" y2="5"></line>
           <line x1="15" y1="35" x2="33" y2="35"></line>
           <line x1="40" y1="20" x2="33" y2="5"></line>
@@ -45,15 +53,15 @@
           <line x1="67" y1="5" x2="58" y2="20"></line>
           <line x1="67" y1="35" x2="58" y2="20"></line>
 
-          <circle cx="15" cy="5", r="4"></circle>
-          <circle cx="15" cy="35", r="4"></circle>
-          <circle cx="33" cy="5", r="4"></circle>
-          <circle cx="33" cy="35", r="4"></circle>
-          <circle cx="40" cy="20", r="4"></circle>
-          <circle cx="8" cy="20", r="4"></circle>
-          <circle cx="58" cy="20", r="4"></circle>
-          <circle cx="67" cy="5", r="4"></circle>
-          <circle cx="67" cy="35", r="4"></circle>
+          <circle cx="15" cy="5", r="2"></circle>
+          <circle cx="15" cy="35", r="2"></circle>
+          <circle cx="33" cy="5", r="2"></circle>
+          <circle cx="33" cy="35", r="2"></circle>
+          <circle cx="40" cy="20", r="2"></circle>
+          <circle cx="8" cy="20", r="2"></circle>
+          <circle cx="58" cy="20", r="2"></circle>
+          <circle cx="67" cy="5", r="2"></circle>
+          <circle cx="67" cy="35", r="2"></circle>
           
         </svg>
         <span>Website</span>
@@ -67,15 +75,16 @@
         </div>
 
         <div class="hero-copy">
-          <h1 class="hero-lede"><strong>I'm Temujin Orkhon.</strong> 
-            This page collects some of my research work and a way to contact me.
+          <h1 class="hero-lede">
+            <strong data-i18n="hero_intro_strong">I'm Temujin Orkhon.</strong>
+            <span data-i18n="hero_intro_body">This page collects some of my research work and a way to contact me.</span>
           </h1>
         </div>
       </div>
 
       <div class="hero-actions">
-        <a href="#work" class="btn btn--primary">View the work</a>
-        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        <a href="#work" class="btn btn--primary" data-i18n="hero_view_work">View the work</a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="hero_get_in_touch">Get in touch</a>
       </div>
     </div>
   </section>
@@ -84,19 +93,19 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Fig. 1</p>
-        <h2>About</h2>
+        <h2 data-i18n="about_title">About</h2>
       </div>
       <div class="about-body">
-        <p>
+        <p data-i18n="about_p1">
           I am a PhD student in Chemistry at the University of California, Berkeley, with aspirations of pursuing research in computational and quantum chemistry
         </p>
-        <p>
+        <p data-i18n="about_p2">
           I recently graduated with a B.S. in Chemistry & Biology and a B.S. in Physics from the Massachusetts Institute of Technology. During my undergraduate studies, I was involved in various research projects, including electronic structure method development, algorithm design for organic transformations, and data-efficient machine learning of chemical properties.
         </p>
-        <p>
+        <p data-i18n="about_p3">
           I have also been actively involved in mentoring and teaching, serving as a tutor for several MIT chemistry courses and leading review sessions for exams and assignments.
         </p>
-        <p>
+        <p data-i18n="about_p4">
           Outside of chemistry, I have a strong interest in software development and design. I have some experience building websites and lightweight chemical software, and I plan to continue developing my skills in this area.
         </p>
       </div>
@@ -107,7 +116,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Fig. 2</p>
-        <h2>Selected Works</h2>
+        <h2 data-i18n="work_title">Selected Works</h2>
       </div>
 
       <div class="work-list">
@@ -118,7 +127,7 @@
           </div>
           <p>Implemented uncertainty quantification to improve data-efficiency in deep learning models for chemical property prediction.</p>
           <ul class="tag-list"><li>RDKit</li><li>PyTorch</li><li>ChemProp</li></ul>
-          <a href="data/uncertainty_poster.pdf" target="_blank" class="work-link">View project &rarr;</a>
+          <a href="data/uncertainty_poster.pdf" target="_blank" class="work-link" data-i18n="view_project">View project &rarr;</a>
         </article>
 
         <article class="work-item">
@@ -128,7 +137,7 @@
           </div>
           <p>Designed a context-aware template generation algorithm for organic synthesis.</p>
           <ul class="tag-list"><li>RDKit</li><li>Pandas</li><li>Numpy</li></ul>
-          <a href="data/org_poster.pdf" target="_blank" class="work-link">View project &rarr;</a>
+          <a href="data/org_poster.pdf" target="_blank" class="work-link" data-i18n="view_project">View project &rarr;</a>
         </article>
 
         <article class="work-item">
@@ -138,7 +147,7 @@
           </div>
           <p>Developed electronic structure methods using quantum embedding to compute band structures of strongly correlated systems.</p>
           <ul class="tag-list"><li>FHI-aims</li><li>QuEmb</li><li>Bashscript</li></ul>
-          <a class="work-link">Article in Preparation</a>
+          <a class="work-link" data-i18n="in_prep">Article in Preparation</a>
         </article>
       </div>
     </div>
@@ -147,16 +156,16 @@
   <section class="section" id="contact">
     <div class="wrap contact-inner">
       <p class="eyebrow">Fig. 3</p>
-      <h2>Contact me</h2>
-      <p class="contact-lede">The fastest way to reach me is via email</p>
+      <h2 data-i18n="contact_title">Contact me</h2>
+      <p class="contact-lede" data-i18n="contact_lede">The fastest way to reach me is via email</p>
 
       <div class="hero-actions contact-actions">
-        <a href="mailto:otemujin@berkeley.edu" class="btn btn--ghost">Email me</a>
+        <a href="mailto:otemujin@berkeley.edu" class="btn btn--ghost" data-i18n="contact_button">Email me</a>
       </div>
 
       <div class="specimen-label">
-        <p class="specimen-row"><span>Name</span><strong>Temujin Orkhon</strong></p>
-        <p class="specimen-row"><span>Email</span><a href="mailto:otemujin@berkeley.edu">otemujin@berkeley.edu</a></p>
+        <p class="specimen-row"><span data-i18n="contact_name_label">Name</span><strong>Temujin Orkhon</strong></p>
+        <p class="specimen-row"><span data-i18n="contact_email_label">Email</span><a href="mailto:otemujin@berkeley.edu">otemujin@berkeley.edu</a></p>
       </div>
 
       <ul class="social-list">

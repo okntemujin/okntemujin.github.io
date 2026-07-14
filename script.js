@@ -1,4 +1,83 @@
+  const translations = {
+    mn: {
+      logo: "О. Тэмүжин",
+      page_title: "Орхон Тэмүжин",
+      hero_intro_strong: "Би бол Орxоны Тэмүжин.",
+      hero_intro_body: "Энэ хуудасанд миний судалгааны ажил ба надтай холбогдох арга зүй байгаа.",
+      hero_view_work: "Ажил харах",
+      hero_get_in_touch: "Холбоо барих",
+      about_title: "Надын талаар",
+      about_p1: "Би Калифорнийн Беркли Их Сургууль-д докторын (PhD) оюутан бөгөөд квант химийн чиглэлээр судалгаа хийхийг зорьж байна.",
+      about_p2: "Би саяхан Массачусетсийн Технологийн Дээд Сургуулийг (MIT) Хими & Биологи, мөн Физикийн чиглэлээр хос бакалаврын (B.S.) зэрэгтэй төгссөн. Бакалаврын хугацаандаа молекулын электрон бүтцийн арга боловсруулах, органик хувиргалт хийх алгоритмын дизайн, химийн шинж чанаруудын хиймэл оюун ухаанаар сурах зэрэг олон төрлийн судалгааны төслүүдэд оролцсон.",
+      about_p3: "Мөн би MIT-ийн органик, квант, физик химийн хичээлийн туслаx багш болж, давтлагын хичээл удирдан заах, зөвлөх ажилын туршлагатай.",
+      about_p4: "Химийн хичээлээс гадна би програм хангамж боловсруулах, вэб дизайн хийх сонирхолтой. Би вэб хуудас болон химийн программ хангамж бүтээх туршлагатай бөгөөд энэ чиглэлээр ур чадвараа үргэлжлүүлэн хөгжүүлэхээр төлөвлөж байна",
+      work_title: "Судалгааны ажил",
+      contact_title: "Холбоо барих",
+      contact_lede: "Надтай холбогдох хамгийн хурдан арга бол имэйлээр холбогдох юм.",
+      contact_button: "Имэйл илгээх",
+      contact_name_label: "Нэр",
+      contact_email_label: "Имэйл",
+      view_project: "Төслийг харах →",
+      in_prep: "Бичигдэж байгаа",
+    }
+  };
+
+  let currentLanguage = localStorage.getItem("site-language") || "en";
+  const originalEnglish = {};
+
+  function updateLanguageSwitcher() {
+    const toggleButton = document.getElementById("language-switcher");
+    if (!toggleButton) return;
+
+    toggleButton.setAttribute("aria-pressed", currentLanguage === "mn" ? "true" : "false");
+    toggleButton.setAttribute("aria-label", currentLanguage === "en" ? "Switch to Mongolian" : "Switch to English");
+    toggleButton.setAttribute("title", currentLanguage === "en" ? "Switch to Mongolian" : "Switch to English");
+  }
+
+  function captureOriginalEnglish() {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      originalEnglish[element.dataset.i18n] = element.textContent;
+    });
+    originalEnglish.pageTitle = document.title;
+  }
+
+  function applyTranslations() {
+    if (currentLanguage === "mn") {
+      const strings = translations.mn;
+      document.documentElement.lang = "mn";
+      document.title = strings.page_title;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = strings[element.dataset.i18n];
+        if (typeof value === "string") {
+          element.textContent = value;
+        }
+      });
+    } else {
+      document.documentElement.lang = "en";
+      document.title = originalEnglish.pageTitle;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (originalEnglish[key]) {
+          element.textContent = originalEnglish[key];
+        }
+      });
+    }
+
+    updateLanguageSwitcher();
+  }
+
+  function toggleLanguage() {
+    currentLanguage = currentLanguage === "en" ? "mn" : "en";
+    localStorage.setItem("site-language", currentLanguage);
+    applyTranslations();
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
+  captureOriginalEnglish();
+  applyTranslations();
+  document.getElementById("language-switcher")?.addEventListener("click", toggleLanguage);
 
   // Hero background: floating molecule network
   (function () {
