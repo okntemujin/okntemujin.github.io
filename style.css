@@ -352,4 +352,9 @@
   @media (max-width: 560px) {
     .nav-list { gap: 18px; }
     .work-item-head { flex-direction: column; align-items: flex-start; }
+    .nav-language-switcher {
+      position: static;
+      transform: none;
+      margin-left: auto;
+    }
   }
