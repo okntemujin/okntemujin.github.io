@@ -23,6 +23,11 @@
     }
   };
 
+  const calConfig = {
+  en: { link: "temujin-orkhon/60min-en", namespace: "60min-en" },
+  mn: { link: "temujin-orkhon/60min-mn", namespace: "60min-mn" }
+};
+
   let currentLanguage = localStorage.getItem("site-language") || "en";
   const originalEnglish = {};
 
@@ -65,7 +70,10 @@
         }
       });
     }
-
+    const calBtn = document.querySelector("[data-cal-link]");
+    const cfg = calConfig[currentLanguage] || calConfig.en;
+    calBtn.setAttribute("data-cal-link", cfg.link);
+    calBtn.setAttribute("data-cal-namespace", cfg.namespace);
     updateLanguageSwitcher();
   }
 
